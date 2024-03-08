@@ -1,0 +1,8 @@
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/dto/UsuarioRequestDTO.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/controller/Usuario.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/CvAppApplication.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/persistencia/repository/UsuarioRepository.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/service/implementaciones/UsuarioImp.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/persistencia/entities/UsuarioEntity.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/service/UsuarioService.java
+/Users/brandonmaciel/dev/Proyectos/CvApp/backend/CvAPP/src/main/java/com/brandonDev/CvAPP/config/CorsConfig.java
