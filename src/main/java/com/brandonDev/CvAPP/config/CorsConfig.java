@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/usuario/**")
-                        .allowedOrigins("http://localhost:4200", "https://brandon-dev1996.netlify.app")
+                        .allowedOrigins("http://localhost:4200", "https://by-impresiones-3d.netlify.app/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
             }
         };
