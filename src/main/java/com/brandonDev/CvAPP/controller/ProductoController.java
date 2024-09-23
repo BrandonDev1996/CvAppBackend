@@ -18,9 +18,15 @@ public class ProductoController {
     private ProductoService productoService;
 
     @GetMapping("")
-    public ResponseEntity getProductos(){
-        List<Producto> producto = productoService.getProductos();
-        return null;
+    public ResponseEntity<List<Producto>> getProductos() {
+        List<Producto> productos = productoService.getProductos();
+
+        if (productos.isEmpty()) {
+            return ResponseEntity.noContent().build(); // 204 No Content si no hay productos
+        }
+
+        return ResponseEntity.ok(productos); // 200 OK con la lista de productos
     }
+
 
 }

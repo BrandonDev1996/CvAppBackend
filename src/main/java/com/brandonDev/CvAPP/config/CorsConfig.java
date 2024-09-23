@@ -13,9 +13,15 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/usuario/**")
+                // Configuración de CORS para /producto/**
+                registry.addMapping("/producto/**")
                         .allowedOrigins("http://localhost:4200", "https://by-impresiones-3d.netlify.app/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
+
+                // Configuración de CORS para /imagenes/**
+                registry.addMapping("/imagenes/**")
+                        .allowedOrigins("http://localhost:4200", "https://by-impresiones-3d.netlify.app/")
+                        .allowedMethods("GET");
             }
         };
     }

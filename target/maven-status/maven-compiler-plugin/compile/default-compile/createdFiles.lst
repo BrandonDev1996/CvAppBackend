@@ -1,9 +1,6 @@
 com/brandonDev/CvAPP/dto/UsuarioRequestDTO.class
-com/brandonDev/CvAPP/service/implementaciones/UsuarioImp.class
-com/brandonDev/CvAPP/config/CorsConfig.class
 com/brandonDev/CvAPP/controller/Usuario.class
 com/brandonDev/CvAPP/persistencia/entities/UsuarioEntity.class
 com/brandonDev/CvAPP/CvAppApplication.class
 com/brandonDev/CvAPP/service/UsuarioService.class
 com/brandonDev/CvAPP/persistencia/repository/UsuarioRepository.class
-com/brandonDev/CvAPP/config/CorsConfig$1.class
