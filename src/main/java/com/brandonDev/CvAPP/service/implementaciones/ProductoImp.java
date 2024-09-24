@@ -28,14 +28,11 @@ public class ProductoImp implements ProductoService {
 
     private List<Producto> crearProductos() {
         List<Producto> productos = new ArrayList<>();
-        String rutaImagen = "classpath:imagenes/app/"; // Ruta de la imagen en resources
-
-        // Obtener la imagen como Resource
-        Resource imagenResource = resourceLoader.getResource(rutaImagen);
-
-        // Construir la URL del entorno
+        // Construir la URL base para el entorno
         String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
-        String imageUrl = baseUrl + "/imagenes/" + imagenResource.getFilename(); // URL accesible en el frontend
+
+        // Concatenar la ruta de la imagen
+        String imageUrl = baseUrl + "/api-gestor-de-productos/imagenes/"; // Asegúrate de que la ruta sea correcta
 
         // Agregar el producto usando la URL completa
         productos.add(new Producto("Funko Pop", "Chucky", 10000, imageUrl + "chucky.jpg", 0));
