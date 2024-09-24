@@ -1,6 +1,8 @@
 package com.brandonDev.CvAPP.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -18,30 +20,29 @@ import java.nio.file.Paths;
 @RequestMapping("imagenes")
 public class ImagenController {
 
-    // Ruta a la carpeta de imágenes dentro de resources
-    private final String imageDirectory = "src/main/resources/imagenes/app/";
+        @Autowired
+        private ResourceLoader resourceLoader;
 
-    @GetMapping("/{nombreImagen}")
-    public ResponseEntity<Resource> obtenerImagen(@PathVariable String nombreImagen) {
-        try {
-            // Limpia el nombre de la imagen para evitar ataques de path traversal
-            String cleanedFileName = StringUtils.cleanPath(nombreImagen);
+        @GetMapping("/{nombreImagen}")
+        public ResponseEntity<Resource> obtenerImagen(@PathVariable String nombreImagen) {
+            try {
+                // Limpia el nombre de la imagen para evitar ataques de path traversal
+                String cleanedFileName = StringUtils.cleanPath(nombreImagen);
 
-            // Construye el path de la imagen
-            Path imagePath = Paths.get(imageDirectory + cleanedFileName).toAbsolutePath().normalize();
-            Resource imagen = new UrlResource(imagePath.toUri());
+                // Carga el recurso desde la carpeta de recursos
+                Resource imagen = resourceLoader.getResource("classpath:imagenes/app/" + cleanedFileName);
 
-            // Verifica si la imagen existe y es legible
-            if (!imagen.exists() || !imagen.isReadable()) {
-                return ResponseEntity.notFound().build();
+                // Verifica si la imagen existe y es legible
+                if (!imagen.exists() || !imagen.isReadable()) {
+                    return ResponseEntity.notFound().build();
+                }
+
+                // Devuelve la imagen con los encabezados HTTP apropiados
+                return ResponseEntity.ok()
+                        .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + imagen.getFilename() + "\"")
+                        .body(imagen);
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().build();
             }
-
-            // Devuelve la imagen con los encabezados HTTP apropiados
-            return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + imagen.getFilename() + "\"")
-                    .body(imagen);
-        } catch (MalformedURLException e) {
-            return ResponseEntity.badRequest().build();
         }
     }
-}
