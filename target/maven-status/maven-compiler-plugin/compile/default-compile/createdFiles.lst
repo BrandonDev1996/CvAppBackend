@@ -1,6 +1,11 @@
-com/brandonDev/CvAPP/dto/UsuarioRequestDTO.class
-com/brandonDev/CvAPP/controller/Usuario.class
-com/brandonDev/CvAPP/persistencia/entities/UsuarioEntity.class
+com/brandonDev/CvAPP/config/CorsConfig.class
+com/brandonDev/CvAPP/utils/ResourceNotFoundException.class
+com/brandonDev/CvAPP/controller/ImagenController.class
+com/brandonDev/CvAPP/config/CorsConfig$1.class
+com/brandonDev/CvAPP/controller/GlobalExceptionHandler.class
+com/brandonDev/CvAPP/service/ProductoService.class
+com/brandonDev/CvAPP/controller/CustomErrorController.class
+com/brandonDev/CvAPP/service/implementaciones/ProductoImp.class
 com/brandonDev/CvAPP/CvAppApplication.class
-com/brandonDev/CvAPP/service/UsuarioService.class
-com/brandonDev/CvAPP/persistencia/repository/UsuarioRepository.class
+com/brandonDev/CvAPP/dto/Producto.class
+com/brandonDev/CvAPP/controller/ProductoController.class
